@@ -1,13 +1,12 @@
-#!/usr/bin/python3
-# -*-coding:utf-8 -*
-import sys 
-import re
+#!/usr/bin/env python3
+import sys
 
-# Regular expression to match contiguous strings of letters
-word_pattern = re.compile(r'[a-zA-Z]+')
-
-for line in sys.stdin: 
-    line = line.strip() 
-    words = word_pattern.findall(line)
+# Read input from standard input (stdin)
+for line in sys.stdin:
+    # Remove leading and trailing whitespace
+    line = line.strip()
+    # Split the line into words
+    words = line.split()
+    # Output each word with a count of 1
     for word in words:
-        print(f'{word.lower()}\t1')
+        print(f'{word}\t1')
